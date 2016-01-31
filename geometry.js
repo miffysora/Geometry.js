@@ -58,6 +58,6 @@ MIFFY.circumcircle = function(t){
 		var center_x = (t[0] * sin2A + t[2] * sin2B + t[4] * sin2C) / (sin2A + sin2B + sin2C);
 		var center_y = (t[1] * sin2A + t[3] * sin2B + t[5] * sin2C) / (sin2A + sin2B + sin2C);
 		//半径の計算(正弦定理より)
-		var radian = bc / Math.sin(angleA) / 2.0;
-		return {'x':center_x,'y':center_y,'radian':radian};
+		var radius = bc / Math.sin(angleA) / 2.0;
+		return {'x':center_x,'y':center_y,'radius':radius};
 } 
