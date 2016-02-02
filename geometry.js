@@ -2,7 +2,13 @@ var MIFFY = { REVISION: '0' };
 MIFFY.distance = function (ax,ay,bx,by) {
    return Math.hypot(ax-bx,ay-by);
 }
-
+/**点と円の衝突判定*/
+MIFFY.pointInCircle = function(px,py,x,y,radius) {
+        //円の中心と点pとの距離を求める
+        var distance = MIFFY.distance(px,x,py,y);
+        if (distance > radius) return false;//外側
+        if (distance < radius) return true;//内側
+    }
 //三角形の外接円を計算する
 //@param t...三角形の頂点を示す、6要素の配列。x,y,の順に並ぶ
 //@return 円を示す辞書形オブジェクト x,y=円の中心, radius=円の半径
